@@ -14,7 +14,7 @@ Steps:
 5. Hit manage extensions 
 <img width="1919" height="1015" alt="image" src="https://github.com/user-attachments/assets/0d247610-8a52-4960-92e8-5c4043f07850" />
 
-6. Enable Developer Mode
+6. Enable Developer Mode (toggle all the way at the right)
 <img width="1919" height="279" alt="image" src="https://github.com/user-attachments/assets/64edf11e-0af1-4c54-8d39-11137f2385af" />
 
 7. Click Load Unpacked 

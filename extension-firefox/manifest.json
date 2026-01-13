@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Kemono Image Expander",
+  "version": "1.0.0",
+  "description": "Automatically expand images on Kemono post pages.",
+  "icons": { "48": "images/48.png", "128": "images/128.png" },
+
+  "permissions": ["activeTab"],             
+  "host_permissions": [
+    "*://kemono.cr/*",
+    "*://*.kemono.cr/*",
+    "*://kemono.su/*",
+    "*://*.kemono.su/*",
+    "*://kemono.party/*",
+    "*://*.kemono.party/*"
+  ],
+
+  "action": { "default_title": "Expand Kemono Thumbnails" },
+
+  "content_scripts": [{
+    "matches": [
+      "*://kemono.cr/*",
+      "*://*.kemono.cr/*",
+      "*://kemono.su/*",
+      "*://*.kemono.su/*",
+      "*://kemono.party/*",
+      "*://*.kemono.party/*"
+    ],
+    "js": ["content.js"],
+    "run_at": "document_idle"
+  }],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "kemono-expander@example.com",
+      "strict_min_version": "109.0"
+    }
+  }
+}

@@ -24,3 +24,8 @@ Steps:
 <img width="952" height="593" alt="image" src="https://github.com/user-attachments/assets/b2e10ad9-b5a5-4aae-bbd4-2e30fbd40121" />
 
 
+---
+
+Example:
+<img width="1605" height="554" alt="Example of Extension" src="https://github.com/user-attachments/assets/f0990ea8-045c-44bd-950c-a71f36b91a98" />
+

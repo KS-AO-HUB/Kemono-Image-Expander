@@ -61,7 +61,7 @@ Keep the folder somewhere permanent, like `Documents`. The browser loads it from
 6. Refresh any open Pawchive tabs and you're done.
 
 > Chrome may show an *"Unrecognized manifest key 'browser_specific_settings'"* notice under **Errors**.
-> That part of the manifest is for Firefox. It's harmless and you can ignore it.
+> That part of the manifest is for Firefox. It is harmless and you can ignore it.
 
 ### Firefox
 

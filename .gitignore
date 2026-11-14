@@ -1,0 +1,14 @@
+# Build output. Zips are attached to GitHub Releases, not committed.
+dist/
+*.zip
+*.xpi
+*.crx
+*.pem
+
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+web-ext-artifacts/

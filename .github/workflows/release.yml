@@ -16,7 +16,7 @@ jobs:
 
       - name: Check tag matches manifest version
         run: |
-          manifest_version=$(jq -r .version extension/manifest.json)
+          manifest_version=$(jq -r .version manifest.json)
           if [ "v${manifest_version}" != "${GITHUB_REF_NAME}" ]; then
             echo "Tag ${GITHUB_REF_NAME} does not match manifest version ${manifest_version}"
             exit 1
@@ -25,8 +25,7 @@ jobs:
       - name: Build zip
         run: |
           mkdir -p dist
-          cd extension
-          zip -r "../dist/pawchive-image-expander-${GITHUB_REF_NAME}.zip" . -x '.*'
+          zip -r "dist/pawchive-image-expander-${GITHUB_REF_NAME}.zip" manifest.json content.js images
 
       - name: Publish release
         env:

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="extension/images/128.png" width="96" alt="">
+  <img src="images/128.png" width="96" alt="">
 </p>
 
 <h1 align="center">Pawchive Image Expander</h1>
@@ -24,7 +24,7 @@ It still runs on `kemono.cr` and `kemono.su` too, because those pages use the sa
   `https://pawchive.pw/<service>/user/<creator-id>` won't start downloading every full-size image on the page.
 - Each thumbnail is swapped for the original file it links to. If that file fails to load, the thumbnail comes back.
 - No tracking, no network requests of its own, no extra permissions. It only runs on the sites listed in
-  [`manifest.json`](extension/manifest.json).
+  [`manifest.json`](manifest.json).
 
 ## Install
 
@@ -32,7 +32,17 @@ First, get the files:
 
 - **Easiest:** download the latest `pawchive-image-expander-vX.Y.Z.zip` from the
   [Releases](../../releases) page and unzip it, **or**
-- click **Code → Download ZIP** on this page, unzip it, and use the `extension` folder inside.
+- click the green **Code** button → **Download ZIP** on this page, then right-click the zip → **Extract All**.
+
+> **Which folder do I pick?** Windows usually puts the files inside a second folder with the same name:
+>
+> ```
+> Kemono-Image-Expander-main          <- not this one
+>   Kemono-Image-Expander-main        <- pick THIS one (manifest.json is directly inside)
+>     manifest.json
+> ```
+>
+> If Chrome says *"Manifest file is missing or unreadable"*, you picked the outer folder. Go one folder deeper.
 
 Keep the folder somewhere permanent, like `Documents`. The browser loads it from there, so don't delete it afterwards.
 
@@ -54,7 +64,7 @@ Keep the folder somewhere permanent, like `Documents`. The browser loads it from
 
    <img width="570" height="270" alt="Load unpacked button" src="https://github.com/user-attachments/assets/192e15b2-8ccf-43c1-a529-8fec7b0b0b07" />
 
-5. Select the unzipped folder that has `manifest.json` directly inside it.
+5. Select the folder that has `manifest.json` directly inside it (see **Which folder do I pick?** above).
 
    <img width="952" height="593" alt="Selecting the extension folder" src="https://github.com/user-attachments/assets/b2e10ad9-b5a5-4aae-bbd4-2e30fbd40121" />
 
@@ -80,7 +90,7 @@ Regular Firefox only installs signed add-ons. Developer Edition, Nightly and ESR
 
 1. Type `about:config` in the address bar and accept the warning.
 2. Search for `xpinstall.signatures.required` and set it to **false**.
-3. Zip the *contents* of the extension folder, so that `manifest.json` sits at the top of the zip, not inside a subfolder.
+3. Zip the *contents* of the folder that has `manifest.json` in it, so that `manifest.json` sits at the top of the zip, not inside a subfolder.
    The release zip is already built this way.
 4. Type `about:addons`, click the ⚙️ gear, choose **Install Add-on From File…**, and pick the zip.
 
@@ -100,23 +110,23 @@ Replace the files in your extension folder with the new version. Then:
 
 | Problem | Fix |
 | --- | --- |
+| *"Manifest file is missing or unreadable"* | You picked the outer folder. Pick the folder that has `manifest.json` directly inside. |
 | Nothing happens on a post | Refresh the page. Check the extension is enabled and, on Firefox, that it has permission for the site. |
 | Images expand on a profile page | They shouldn't. Please open an issue with the URL. |
-| Pawchive moved to a new domain | Add the new domain to `matches` in `extension/manifest.json`, reload the extension, and open an issue or PR. |
+| Pawchive moved to a new domain | Add the new domain to `matches` in `manifest.json`, reload the extension, and open an issue or PR. |
 
 ## Project layout
 
 ```
-extension/
-  manifest.json   Manifest V3, shared by Chrome and Firefox
-  content.js      The whole extension
-  images/         Icons
+manifest.json   Manifest V3, shared by Chrome and Firefox
+content.js      The whole extension
+images/         Icons
 .github/workflows/release.yml   Builds the release zip when a version tag is pushed
 ```
 
 ### Making a release
 
-1. Bump `version` in `extension/manifest.json`.
+1. Bump `version` in `manifest.json`.
 2. Commit, then tag and push:
 
    ```bash
@@ -124,7 +134,7 @@ extension/
    git push origin v2.0.0
    ```
 
-GitHub Actions zips the `extension` folder and attaches it to a new release.
+GitHub Actions zips the extension files and attaches them to a new release.
 
 ## Disclaimer
 

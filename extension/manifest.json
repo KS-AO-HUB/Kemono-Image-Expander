@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Pawchive Image Expander",
   "short_name": "Image Expander",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Loads full-resolution images instead of thumbnails on Pawchive (and Kemono) post pages.",
   "icons": {
     "48": "images/48.png",

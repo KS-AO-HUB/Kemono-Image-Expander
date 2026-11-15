@@ -25,7 +25,7 @@ jobs:
       - name: Build zip
         run: |
           mkdir -p dist
-          zip -r "dist/pawchive-image-expander-${GITHUB_REF_NAME}.zip" manifest.json content.js images
+          zip -r "dist/pawchive-image-expander.zip" manifest.json content.js images
 
       - name: Publish release
         env:

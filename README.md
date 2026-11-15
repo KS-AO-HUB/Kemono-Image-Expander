@@ -28,21 +28,16 @@ It still runs on `kemono.cr` and `kemono.su` too, because those pages use the sa
 
 ## Install
 
-First, get the files:
+### 1. Download
 
-- **Easiest:** download the latest `pawchive-image-expander-vX.Y.Z.zip` from the
-  [Releases](../../releases) page and unzip it, **or**
-- click the green **Code** button → **Download ZIP** on this page, then right-click the zip → **Extract All**.
+**[⬇️ Download pawchive-image-expander.zip](https://github.com/KS-AO-HUB/Kemono-Image-Expander/releases/latest/download/pawchive-image-expander.zip)**
 
-> **Which folder do I pick?** Windows usually puts the files inside a second folder with the same name:
->
-> ```
-> Kemono-Image-Expander-main          <- not this one
->   Kemono-Image-Expander-main        <- pick THIS one (manifest.json is directly inside)
->     manifest.json
-> ```
->
-> If Chrome says *"Manifest file is missing or unreadable"*, you picked the outer folder. Go one folder deeper.
+Right-click the zip → **Extract All** → **Extract**. That gives you a `pawchive-image-expander` folder with
+`manifest.json` directly inside. That's the folder you'll select below.
+
+> Using the green **Code → Download ZIP** button instead? That zip has an extra folder layer:
+> pick the **inner** `Kemono-Image-Expander-main` folder, the one with `manifest.json` directly inside.
+> If Chrome says *"Manifest file is missing or unreadable"*, you picked the outer folder.
 
 Keep the folder somewhere permanent, like `Documents`. The browser loads it from there, so don't delete it afterwards.
 
